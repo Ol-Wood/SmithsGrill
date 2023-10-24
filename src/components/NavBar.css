@@ -9,6 +9,8 @@
     -webkit-text-stroke-color: #f4631c;
 }
 
-.white-stroke {
-    -webkit-text-stroke-color: white;
+
+.active-nav-item > p {
+    -webkit-text-stroke-color: white !important;
+    color: #f4631c !important;
 }

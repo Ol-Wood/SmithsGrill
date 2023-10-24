@@ -7,18 +7,25 @@
   font-family: 'Roboto', sans-serif;
   color: white;
   background: black;
+  height:100%;
+   min-height:100%; 
 }
 
-body {
-  margin: 0;
-  padding: 0;
+  body {
+  height:100%;
+  min-height:100%; 
   
 }
 
 p {
-  font-size: 30px;
+  font-size: 35px;
 }
 
-h1 {
-  font-size: 40px;
+h2 {
+  font-size: 45px;
 }
+
+.standard-text {
+  @apply text-[40px] lg:text-[28px]
+}
+
