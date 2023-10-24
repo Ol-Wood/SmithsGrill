@@ -1,0 +1,30 @@
+.intro {
+    padding: 50px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-welcome {
+    width: 100%;
+    display: flex;
+    font-size: 40px;
+}
+
+.home-image {
+    width: 50%;
+    border-radius: 5%;
+}
+
+.intro-welcome > p:first-child {
+    flex-basis: 50%;
+}
+
+.intro-welcome > p:last-child  {
+    flex-basis: 50%;
+}
+
+.home-content {
+    display: flex;
+    gap: 10px
+}
