@@ -4,9 +4,9 @@
 
 
 :root {
-  Font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-  background: #242526;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: black;
 }
 
 body {
@@ -14,6 +14,7 @@ body {
   padding: 0;
   
 }
+
 p {
   font-size: 30px;
 }

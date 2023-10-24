@@ -1,30 +1,14 @@
-.intro {
-    padding: 50px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+.brand-type {
+    font-weight: 700;
+    -webkit-text-stroke-width: 1px;
+    text-transform: uppercase;
+    line-height:12vh;
 }
 
-.intro-welcome {
-    width: 100%;
-    display: flex;
-    font-size: 40px;
+.orange-stroke {
+    -webkit-text-stroke-color: #f4631c;
 }
 
-.home-image {
-    width: 50%;
-    border-radius: 5%;
-}
-
-.intro-welcome > p:first-child {
-    flex-basis: 50%;
-}
-
-.intro-welcome > p:last-child  {
-    flex-basis: 50%;
-}
-
-.home-content {
-    display: flex;
-    gap: 10px
+.white-stroke {
+    -webkit-text-stroke-color: white;
 }
