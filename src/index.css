@@ -4,28 +4,27 @@
 
 
 :root {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: white;
-  background: black;
+  background: black; 
   height:100%;
    min-height:100%; 
 }
 
-  body {
+body {
   height:100%;
   min-height:100%; 
-  
 }
 
-p {
-  font-size: 35px;
+li,p {
+  @apply lg:text-[1.3rem] text-[2rem];
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
 }
 
-h2 {
+h1, h2 {
   font-size: 45px;
-}
-
-.standard-text {
-  @apply text-[40px] lg:text-[28px]
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
 }
 
