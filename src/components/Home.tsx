@@ -31,8 +31,8 @@ export default function Home() {
       <div className="flex flex-col gap-8 border-2 rounded border-gray mt-10 text-center p-10 self-center">
         <h2 className="text-orange">Give Us a Call</h2>
         <p>
-          Give Us a Call: We're just a phone call away, and we'd love to hear from you. If you have any questions or if you're ready to book our BBQ
-          catering services, don't hesitate to reach out at{" "}
+          We're just a phone call away, and we'd love to hear from you. If you have any questions or if you're ready to book our BBQ catering
+          services, don't hesitate to reach out at{" "}
           <a className="underline" href="tel:07950745764">
             07950745764
           </a>
