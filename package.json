@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ol-wood.github.io/SmithsGrill",
+  "homepage": "https://www.smiths-mobile-bbq.co.uk",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
