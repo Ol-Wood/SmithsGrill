@@ -10,9 +10,7 @@ export default function Home() {
         making your event truly unforgettable. Count on us to delight your guests with our mouthwatering BBQ classics and exceptional service.
       </p>
       <span className="border-b-2 border-gray"></span>
-      <div className="flex w-2/3 self-center border-4 border-gray rounded ">
-        <img src={BBQ} />
-      </div>
+      <img className="w-full border-4 border-gray rounded " src={BBQ} />
       <h2 className="text-orange">Why Choose Us?</h2>
       <ul>
         <li>
