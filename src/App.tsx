@@ -1,15 +1,25 @@
-import Home from "./components/Home";
-import Banner from "./components/Banner";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Ticker from "./components/Ticker";
+import About from "./components/About";
+import WhyUs from "./components/WhyUs";
+import TheGrill from "./components/TheGrill";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <Banner />
-      <div className="pb-10">
-        <div className="px-[5%] lg:px-[10%] mt-10 flex flex-col gap-y-6">
-          <Home />
-        </div>
-      </div>
+      <Header />
+      <main>
+        <Hero />
+        <Ticker />
+        <About />
+        <WhyUs />
+        <TheGrill />
+        <Contact />
+      </main>
+      <Footer />
     </>
   );
 }
