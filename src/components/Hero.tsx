@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import Smoke from "./Smoke";
 import { ArrowIcon, CalendarIcon, FlameIcon, PhoneIcon, PinIcon, TruckIcon } from "./icons";
 import { PHONE_DISPLAY, PHONE_HREF } from "../siteConfig";
 import { HERO_PHOTO, TRAILER_PHOTO } from "../media";
@@ -102,13 +103,10 @@ export default function Hero() {
       </div>
 
       {/* Interim treatment: transparent trailer render, so it needs no edge mask —
-          just a warm glow behind it and a shadow that follows the cut-out alpha. */}
+          just drifting smoke behind it and a shadow that follows the cut-out alpha. */}
       {!photo && (
         <Reveal delay={200} className="relative mt-14 lg:mt-20">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-10 -z-10 mx-auto h-48 max-w-4xl rounded-full bg-ember-600/30 blur-[100px]"
-          />
+          <Smoke className="inset-x-0 -top-16 bottom-[-12%] -z-10 mx-auto max-w-[1700px]" />
           <img
             src={TRAILER_PHOTO.src}
             width={2534}

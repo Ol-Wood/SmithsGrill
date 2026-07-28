@@ -66,6 +66,24 @@ export default {
           "50%": { transform: "translate3d(3%, -4%, 0) scale(1.08)", opacity: "0.5" },
           "100%": { transform: "translate3d(0,0,0) scale(1)", opacity: "0.3" },
         },
+        // Smoke plumes: each layer drifts on its own path and timing so they
+        // never visibly loop together
+        "smoke-a": {
+          "0%, 100%": { transform: "translate3d(-3%, 0, 0) scale(1)", opacity: "0.35" },
+          "50%": { transform: "translate3d(4%, -7%, 0) scale(1.18)", opacity: "0.6" },
+        },
+        "smoke-b": {
+          "0%, 100%": { transform: "translate3d(4%, 2%, 0) scale(1.1)", opacity: "0.28" },
+          "50%": { transform: "translate3d(-5%, -5%, 0) scale(1)", opacity: "0.5" },
+        },
+        "smoke-c": {
+          "0%, 100%": { transform: "translate3d(0, 3%, 0) scale(0.95)", opacity: "0.2" },
+          "50%": { transform: "translate3d(2%, -9%, 0) scale(1.25)", opacity: "0.42" },
+        },
+        "smoke-texture": {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1.1)", opacity: "0.05" },
+          "50%": { transform: "translate3d(-3%, -4%, 0) scale(1.3)", opacity: "0.1" },
+        },
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
@@ -74,6 +92,10 @@ export default {
       animation: {
         flicker: "flicker 4.5s ease-in-out infinite",
         "smoke-drift": "smoke-drift 18s ease-in-out infinite",
+        "smoke-a": "smoke-a 24s ease-in-out infinite",
+        "smoke-b": "smoke-b 31s ease-in-out infinite -6s",
+        "smoke-c": "smoke-c 19s ease-in-out infinite -11s",
+        "smoke-texture": "smoke-texture 38s ease-in-out infinite",
         marquee: "marquee 34s linear infinite",
       },
     },
