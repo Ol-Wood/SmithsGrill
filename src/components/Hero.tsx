@@ -1,7 +1,7 @@
-import BBQ from "../assets/bbq-dark.png";
 import Reveal from "./Reveal";
 import { ArrowIcon, CalendarIcon, FlameIcon, PhoneIcon, PinIcon, TruckIcon } from "./icons";
 import { PHONE_DISPLAY, PHONE_HREF } from "../siteConfig";
+import { HERO_PHOTO, TRAILER_PHOTO } from "../media";
 
 const trustPoints = [
   { icon: TruckIcon, label: "We come to you" },
@@ -10,8 +10,37 @@ const trustPoints = [
 ];
 
 export default function Hero() {
+  const photo = HERO_PHOTO;
+
   return (
-    <section id="top" className="grain relative isolate overflow-hidden pb-16 pt-32 sm:pt-40 lg:pb-24 lg:pt-48">
+    <section
+      id="top"
+      className={`grain relative isolate overflow-hidden ${
+        photo ? "flex min-h-[92svh] items-end pb-20 pt-40" : "pb-16 pt-32 sm:pt-40 lg:pb-24 lg:pt-48"
+      }`}
+    >
+      {/* Full-bleed photograph, once a hero image has been supplied */}
+      {photo && (
+        <>
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            fetchPriority="high"
+            style={{ objectPosition: photo.focus ?? "50% 50%" }}
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
+          />
+          {/* Scrim: keeps the headline legible over any photo, and keeps the page dark */}
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-10 bg-gradient-to-t from-charcoal-950 via-charcoal-950/85 to-charcoal-950/55"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-10 bg-gradient-to-r from-charcoal-950/90 via-charcoal-950/40 to-transparent"
+          />
+        </>
+      )}
+
       {/* Ambient heat */}
       <div
         aria-hidden
@@ -22,7 +51,7 @@ export default function Hero() {
         className="pointer-events-none absolute -left-32 top-1/3 -z-10 h-[26rem] w-[26rem] animate-flicker rounded-full bg-[radial-gradient(closest-side,rgba(255,138,61,0.18),transparent)] blur-3xl"
       />
 
-      <div className="shell">
+      <div className="shell relative">
         <Reveal>
           <span className="eyebrow">
             <PinIcon className="h-4 w-4" />
@@ -72,20 +101,23 @@ export default function Hero() {
         </Reveal>
       </div>
 
-      {/* Hero photograph — the flat studio backdrop is masked so it melts into the page */}
-      <Reveal delay={200} className="relative mt-14 lg:mt-20">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-8 -z-10 mx-auto h-40 max-w-4xl rounded-full bg-ember-600/25 blur-[90px]"
-        />
-        <img
-          src={BBQ}
-          width={2534}
-          height={762}
-          alt="Two of Smith's mobile BBQ trailers, grills loaded and ready to serve"
-          className="mask-fade mx-auto w-full max-w-[1500px]"
-        />
-      </Reveal>
+      {/* Interim treatment: transparent trailer render, so it needs no edge mask —
+          just a warm glow behind it and a shadow that follows the cut-out alpha. */}
+      {!photo && (
+        <Reveal delay={200} className="relative mt-14 lg:mt-20">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-10 -z-10 mx-auto h-48 max-w-4xl rounded-full bg-ember-600/30 blur-[100px]"
+          />
+          <img
+            src={TRAILER_PHOTO.src}
+            width={2534}
+            height={762}
+            alt={TRAILER_PHOTO.alt}
+            className="mx-auto w-full max-w-[1500px] [filter:drop-shadow(0_28px_36px_rgba(0,0,0,0.75))]"
+          />
+        </Reveal>
+      )}
     </section>
   );
 }

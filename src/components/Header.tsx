@@ -31,7 +31,11 @@ export default function Header() {
       }`}
     >
       <div className="shell flex items-center justify-between gap-6">
-        <a href="#top" aria-label="Smith's Mobile BBQ — home" className="shrink-0">
+        <a
+          href="#top"
+          aria-label="Smith's Mobile BBQ — home"
+          className="shrink-0"
+        >
           <Logo className="h-7 w-auto max-w-[62vw] sm:h-8" />
         </a>
 
@@ -49,7 +53,10 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href={PHONE_HREF} className="btn-primary hidden !px-5 !py-3 sm:inline-flex">
+          <a
+            href={PHONE_HREF}
+            className="btn-primary hidden !px-5 !py-3 sm:inline-flex"
+          >
             <PhoneIcon className="h-4 w-4" />
             <span className="hidden md:inline">{PHONE_DISPLAY}</span>
             <span className="md:hidden">Call us</span>
@@ -68,9 +75,13 @@ export default function Header() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="rounded-full border border-white/15 bg-white/5 p-3 text-white transition hover:border-ember-500/60 hover:bg-white/10 lg:hidden"
+            className="rounded-full border border-white/15 bg-white/5 p-3 text-white transition hover:border-ember-500/60 hover:bg-white/10 hidden sm:block lg:hidden"
           >
-            {menuOpen ? <CloseIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+            {menuOpen ? (
+              <CloseIcon className="h-5 w-5" />
+            ) : (
+              <MenuIcon className="h-5 w-5" />
+            )}
           </button>
         </div>
       </div>

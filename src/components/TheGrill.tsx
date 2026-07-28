@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import { FlameIcon } from "./icons";
+import { GRILL_PHOTO } from "../media";
 
 const menu = ["Sausages", "Burgers", "Chicken"];
 
@@ -42,6 +43,24 @@ export default function TheGrill() {
         <Reveal delay={120}>
           <p className="mt-8 font-display text-2xl uppercase tracking-[0.16em] text-charcoal-500">…and more</p>
         </Reveal>
+
+        {GRILL_PHOTO && (
+          <Reveal delay={160}>
+            <figure className="relative mt-14 overflow-hidden rounded-2xl border border-white/10 shadow-lift">
+              <img
+                src={GRILL_PHOTO.src}
+                alt={GRILL_PHOTO.alt}
+                loading="lazy"
+                style={{ objectPosition: GRILL_PHOTO.focus ?? "50% 50%" }}
+                className="aspect-[4/3] w-full object-cover sm:aspect-[21/9]"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/70 to-transparent"
+              />
+            </figure>
+          </Reveal>
+        )}
       </div>
     </section>
   );
